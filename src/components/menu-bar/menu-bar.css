@@ -17,7 +17,7 @@
         simplifies by all of this by removing padding from the equation.
     */
     box-sizing: border-box;
-    height: $menu-bar-height;
+    /* height: $menu-bar-height; */
 
     /*
         @todo: This adds ~20px in Chrome, when scrolling to the right,
@@ -70,7 +70,7 @@
     position: relative;
     align-items: center;
     white-space: nowrap;
-    height: $menu-bar-height;
+    /* height: $menu-bar-height; */
 }
 
 .menu-bar-item.hoverable {
@@ -107,7 +107,7 @@
 }
 
 .menu-bar-menu {
-    margin-top: $menu-bar-height;
+    /* margin-top: $menu-bar-height; */
     z-index: $z-index-menu-bar;
 }
 

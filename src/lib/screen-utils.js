@@ -16,7 +16,7 @@ const STAGE_DIMENSION_DEFAULTS = {
     fullScreenSpacingBorderAdjustment: 12,
     // referencing css/units.css,
     // menuHeightAdjustment = $stage-menu-height
-    menuHeightAdjustment: 44
+    menuHeightAdjustment: 0
 };
 
 /**
@@ -26,12 +26,12 @@ const STAGE_DIMENSION_DEFAULTS = {
  * @return {STAGE_DISPLAY_SIZES} - the stage size enum value we should use in this situation.
  */
 const resolveStageSize = (stageSizeMode, isFullSize) => {
-    if (stageSizeMode === STAGE_SIZE_MODES.small) {
-        return STAGE_DISPLAY_SIZES.small;
-    }
-    if (isFullSize) {
-        return STAGE_DISPLAY_SIZES.large;
-    }
+    // if (stageSizeMode === STAGE_SIZE_MODES.small) {
+    //     return STAGE_DISPLAY_SIZES.small;
+    // }
+    // if (isFullSize) {
+    //     return STAGE_DISPLAY_SIZES.large;
+    // }
     return STAGE_DISPLAY_SIZES.largeConstrained;
 };
 

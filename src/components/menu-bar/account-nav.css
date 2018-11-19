@@ -9,7 +9,7 @@
     align-content: center;
     padding: 0 0.95rem;
     max-width: 260px;
-    height: $menu-bar-height;
+    /* height: $menu-bar-height; */
     overflow: hidden;
     text-decoration: none;
     text-overflow: ellipsis;

@@ -37,7 +37,7 @@ const messages = defineMessages({
 
 const PreviewModal = ({intl, ...props}) => (
     <ReactModal
-        isOpen
+        isOpen={false}
         className={styles.modalContent}
         contentLabel={intl.formatMessage({...messages.label})}
         overlayClassName={styles.modalOverlay}
@@ -57,7 +57,7 @@ const PreviewModal = ({intl, ...props}) => (
                 <p>
                     { /* eslint-disable max-len */ }
                     <FormattedMessage
-                        defaultMessage="We're working on the next generation of Scratch. We're excited for you to try it!"
+                        defaultMessage="We're working on the next generation of Scratch. We're excited for you to fuck it!"
                         description="Invitation to try 3.0 Beta"
                         id="gui.previewInfo.invitation"
                     />
@@ -82,16 +82,11 @@ const PreviewModal = ({intl, ...props}) => (
                         onClick={props.onTryIt}
                     >
                         <FormattedMessage
-                            defaultMessage="Try It! {caticon}"
+                            defaultMessage="Try It! "
                             description="Label for button to try Scratch 3.0 Beta"
                             id="gui.previewModal.tryit"
                             values={{
-                                caticon: (
-                                    <img
-                                        className={styles.catIcon}
-                                        src={catIcon}
-                                    />
-                                )
+                                
                             }}
                         />
                     </button>
