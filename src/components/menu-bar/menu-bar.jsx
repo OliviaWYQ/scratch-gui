@@ -23,6 +23,7 @@ import LoginDropdown from './login-dropdown.jsx';
 import SB3Downloader from '../../containers/sb3-downloader.jsx';
 import DeletionRestorer from '../../containers/deletion-restorer.jsx';
 import TurboMode from '../../containers/turbo-mode.jsx';
+import GameLoader from '../../containers/game-loader.jsx';
 
 import {openTipsLibrary} from '../../reducers/modals';
 import {setPlayer} from '../../reducers/mode';
@@ -525,6 +526,18 @@ class MenuBar extends React.Component {
                                 <CommunityButton className={styles.menuBarButton} />
                             </MenuBarItemTooltip>
                         ) : [])}
+                    </div>
+                    <div className={classNames(styles.menuBarItem)}>
+                        <GameLoader>
+                            {(className, loadGame) => (
+                                <Button
+                                    className={className}
+                                    onClick={loadGame}
+                                >
+                                    {'click me'}
+                                </Button>
+                            )}
+                        </GameLoader>
                     </div>
                 </div>
 

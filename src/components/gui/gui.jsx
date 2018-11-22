@@ -183,7 +183,7 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
                 ) : null}
-                {/* <MenuBar
+                <MenuBar
                     accountNavOpen={accountNavOpen}
                     authorId={authorId}
                     authorThumbnailUrl={authorThumbnailUrl}
@@ -207,7 +207,7 @@ const GUIComponent = props => {
                     onShare={onShare}
                     onToggleLoginOpen={onToggleLoginOpen}
                     onUpdateProjectTitle={onUpdateProjectTitle}
-                /> */}
+                />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
                         <Box className={styles.editorWrapper}>
