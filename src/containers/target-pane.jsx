@@ -218,7 +218,7 @@ class TargetPane extends React.Component {
             var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[2].x;
             var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[2].y;
             console.log("in");
-        if(Math.pow(xDif,2)<100&&Math.pow(yDif,2)<400){
+        if(Math.pow(xDif,2)<150&&Math.pow(yDif,2)<400){
             console.log("yes");
             alert("you have complete this level");
 
