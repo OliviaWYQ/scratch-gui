@@ -209,6 +209,23 @@ class TargetPane extends React.Component {
             dispatchUpdateRestore, // eslint-disable-line no-unused-vars
             ...componentProps
         } = this.props;
+        //console.log(this.props.vm.runtime.targets);
+        // if(this.props.vm.runtime.targets.length!==0){
+        //     console.log(this.props.vm.runtime.targets[1].x);
+        //     //this.props.vm.runtime.targets[1].x;
+        // }
+        if(this.props.vm.runtime.targets.length===3){
+            var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[2].x;
+            var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[2].y;
+            console.log("in");
+        if(Math.pow(xDif,2)<100&&Math.pow(yDif,2)<400){
+            console.log("yes");
+            alert("you have complete this level");
+
+
+        }
+        }
+
         return (
             <TargetPaneComponent
                 {...componentProps}
