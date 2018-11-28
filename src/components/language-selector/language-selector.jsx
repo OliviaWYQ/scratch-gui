@@ -6,7 +6,7 @@ import styles from './language-selector.css';
 
 // supported languages to exclude from the menu, but allow as a URL option
 const ignore = [];
-console.log(locales);
+// console.log(locales);
 
 const LanguageSelector = ({currentLocale, label, onChange}) => (
     <select

@@ -300,6 +300,7 @@ class Blocks extends React.Component {
         this.workspace.reportValue(data.id, data.value);
     }
     onWorkspaceUpdate (data) {
+        console.log('fuckkkk');
         // When we change sprites, update the toolbox to have the new sprite's blocks
         if (this.props.vm.editingTarget) {
             const target = this.props.vm.editingTarget;
