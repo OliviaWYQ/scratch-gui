@@ -17,9 +17,10 @@ class GameLoader extends React.Component {
             'load'
         ]);
     }
-    load (e){
+    load (){
         // this.props.onLoadingStarted();
-        fetch(e)
+        console.log(this.props.level);
+        fetch(this.props.level)
             .then(resp => resp.arrayBuffer())
             .then(result => this.props.vm.loadProject(result))
             .then(() => {
@@ -39,6 +40,7 @@ GameLoader.propTypes = {
     canSave: PropTypes.bool, // eslint-disable-line
     children: PropTypes.func,
     className: PropTypes.string,
+    level: PropTypes.string,
     // loadingState: PropTypes.oneOf(LoadingStates),
     // onLoadingFinished: PropTypes.func,
     // onLoadingStarted: PropTypes.func,
