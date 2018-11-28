@@ -252,7 +252,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-1'}
+                                    {'第一节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -266,7 +266,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-2'}
+                                    {'第二节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -280,7 +280,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-3'}
+                                    {'第三节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -294,7 +294,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-4'}
+                                    {'第四节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -308,7 +308,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-5'}
+                                    {'第五节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -322,7 +322,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-6'}
+                                    {'第六节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -336,7 +336,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-7'}
+                                    {'第七节课'}
                                 </Button>
                             )}
                         </GameLoader>
@@ -349,7 +349,7 @@ class MenuBar extends React.Component {
                                     className={className}
                                     onClick={loadGame}
                                 >
-                                    {'class1-8'}
+                                    {'第八节课'}
                                 </Button>
                             )}
                         </GameLoader>
