@@ -529,6 +529,7 @@ class MenuBar extends React.Component {
                     </div>
                     <div className={classNames(styles.menuBarItem)}>
                         <GameLoader level="/static/classes/1/1-1.sb3">
+                        
                             {(className, loadGame) => (
                                 <Button
                                     className={className}
