@@ -179,8 +179,8 @@
 }
 
 .blocks-wrapper {
-    flex-grow: 1;
-    position: relative;
+    flex-grow: 0.75;
+    position: abso;
 }
 
 .stage-and-target-wrapper {
@@ -201,17 +201,17 @@
 
 .stage-and-target-wrapper.large {
     /* Fix the max width to max large stage size (defined in layout_constants.js) + gutter size */
-    max-width: calc(480px + calc($space * 2));
+    max-width: calc(960px + calc($space * 2));
 }
 
 .stage-and-target-wrapper.large-constrained {
     /* Fix the max width to max largeConstrained stage size (defined in layout_constants.js) + gutter size */
-    max-width: calc(408px + calc($space * 2));
+    max-width: calc(960px + calc($space * 2));
 }
 
 .stage-and-target-wrapper.small {
     /* Fix the max width to max small stage size (defined in layout_constants.js) + gutter size */
-    max-width: calc(240px + calc($space * 2));
+    max-width: calc(480px + calc($space * 2));
 }
 
 .target-wrapper {
@@ -281,17 +281,17 @@ $fade-out-distance: 15px;
 
 /* Sprite Selection Watermark */
 .watermark {
-    position: absolute;
-    top: 1.25rem;
+    position: relative;
+    top: 1rem;
     pointer-events: none;
 }
 
 [dir="ltr"] .watermark {
-    right: 1.25rem;
+    right: 2.5rem;
 }
 
 [dir="rtl"] .watermark {
-    left: 1.25rem;
+    left: 1rem;
 }
 
 /* Menu */

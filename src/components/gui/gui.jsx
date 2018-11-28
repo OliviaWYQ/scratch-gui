@@ -232,7 +232,7 @@ const GUIComponent = props => {
                                             id="gui.gui.codeTab"
                                         />
                                     </Tab>
-                                    <Tab
+                                    {/* <Tab
                                         className={tabClassNames.tab}
                                         onClick={onActivateCostumesTab}
                                     >
@@ -253,8 +253,8 @@ const GUIComponent = props => {
                                                 id="gui.gui.costumesTab"
                                             />
                                         )}
-                                    </Tab>
-                                    <Tab
+                                    </Tab> */}
+                                    {/* <Tab
                                         className={tabClassNames.tab}
                                         onClick={onActivateSoundsTab}
                                     >
@@ -267,7 +267,7 @@ const GUIComponent = props => {
                                             description="Button to get to the sounds panel"
                                             id="gui.gui.soundsTab"
                                         />
-                                    </Tab>
+                                    </Tab> */}
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     <Box className={styles.blocksWrapper}>
@@ -282,7 +282,7 @@ const GUIComponent = props => {
                                             vm={vm}
                                         />
                                     </Box>
-                                    <Box className={styles.extensionButtonContainer}>
+                                    {/* <Box className={styles.extensionButtonContainer}>
                                         <button
                                             className={styles.extensionButton}
                                             title={intl.formatMessage(messages.addExtension)}
@@ -294,17 +294,17 @@ const GUIComponent = props => {
                                                 src={addExtensionIcon}
                                             />
                                         </button>
-                                    </Box>
-                                    <Box className={styles.watermark}>
+                                    </Box> */}
+                                    {/* <Box className={styles.watermark}>
                                         <Watermark />
-                                    </Box>
+                                    </Box> */}
                                 </TabPanel>
-                                <TabPanel className={tabClassNames.tabPanel}>
+                                {/* <TabPanel className={tabClassNames.tabPanel}>
                                     {costumesTabVisible ? <CostumeTab vm={vm} /> : null}
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {soundsTabVisible ? <SoundTab vm={vm} /> : null}
-                                </TabPanel>
+                                </TabPanel> */}
                             </Tabs>
                             {/* {backpackVisible ? (
                                 <Backpack host={backpackHost} />
@@ -317,12 +317,12 @@ const GUIComponent = props => {
                                 stageSize={stageSize}
                                 vm={vm}
                             />
-                            <Box className={styles.targetWrapper}>
+                            {/* <Box className={styles.targetWrapper}>
                                 <TargetPane
                                     stageSize={stageSize}
                                     vm={vm}
                                 />
-                            </Box>
+                            </Box> */}
                         </Box>
                     </Box>
                 </Box>

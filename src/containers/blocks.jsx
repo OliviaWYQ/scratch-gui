@@ -113,6 +113,8 @@ class Blocks extends React.Component {
         if (this.props.isVisible) {
             this.setLocale();
         }
+        console.log(this.workspace);
+        console.log(this.blocks);
 
         analytics.pageview('/editors/blocks');
     }

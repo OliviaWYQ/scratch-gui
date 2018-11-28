@@ -43,8 +43,8 @@ STAGE_DISPLAY_SCALES[STAGE_DISPLAY_SIZES.largeConstrained] = 0.85; // large mode
 STAGE_DISPLAY_SCALES[STAGE_DISPLAY_SIZES.small] = 0.5; // small mode, regardless of browser size
 
 export default {
-    standardStageWidth: 480,
-    standardStageHeight: 360,
+    standardStageWidth: 960,
+    standardStageHeight: 720,
     fullSizeMinWidth: 1096,
     fullSizePaintMinWidth: 1250
 };
