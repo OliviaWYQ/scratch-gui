@@ -17,9 +17,9 @@ class GameLoader extends React.Component {
             'load'
         ]);
     }
-    load (){
+    load (e){
         // this.props.onLoadingStarted();
-        fetch('/static/scratch-lvl1.sb3')
+        fetch(e)
             .then(resp => resp.arrayBuffer())
             .then(result => this.props.vm.loadProject(result))
             .then(() => {

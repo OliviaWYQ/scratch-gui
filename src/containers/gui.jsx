@@ -101,6 +101,10 @@ class GUI extends React.Component {
             loadingStateVisible,
             ...componentProps
         } = this.props;
+        if(this.props.vm.runtime.targets.length!==0){
+            console.log(this.props.vm.runtime.targets[1].x);
+            //this.props.vm.runtime.targets[1].x;
+        }
         return (
             <GUIComponent
                 loading={fetchingProject || isLoading || loadingStateVisible}
