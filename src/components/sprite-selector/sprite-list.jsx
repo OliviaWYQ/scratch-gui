@@ -31,6 +31,7 @@ const SpriteList = function (props) {
     } = props;
 
     const isSpriteDrag = draggingType === DragConstants.SPRITE;
+    console.log('sprilist');
 
     return (
         <Box

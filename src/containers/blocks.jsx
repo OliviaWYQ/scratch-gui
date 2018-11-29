@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import VMScratchBlocks from '../lib/blocks';
 import VM from 'scratch-vm';
-
 import analytics from '../lib/analytics';
 import log from '../lib/log.js';
 import Prompt from './prompt.jsx';
@@ -18,7 +17,6 @@ import errorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
 import {STAGE_DISPLAY_SIZES} from '../lib/layout-constants';
 import DropAreaHOC from '../lib/drop-area-hoc.jsx';
 import DragConstants from '../lib/drag-constants';
-
 import {connect} from 'react-redux';
 import {updateToolbox} from '../reducers/toolbox';
 import {activateColorPicker} from '../reducers/color-picker';
@@ -270,6 +268,25 @@ class Blocks extends React.Component {
                 this.updateToolboxBlockValue(`${prefix}y`, Math.round(this.props.vm.editingTarget.y).toString());
             });
         }
+        if(this.props.vm.runtime.targets.length!==0){
+            console.log(this.props.vm.runtime.targets[1].x);
+            //this.props.vm.runtime.targets[1].x;
+        }
+        if(this.props.vm.runtime.targets.length===3){
+            var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[2].x;
+            var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[2].y;
+            console.log(xDif);
+            console.log(yDif);
+            console.log("in");
+            console.log(this.num);
+        if(this.num===0&&Math.pow(xDif,2)<150&&Math.pow(yDif,2)<1600){
+            this.num+=1;
+            console.log("yes");
+            alert("you have complete this level");
+            if(this.num===3){
+                this.num=0;
+            }
+
     }
     onWorkspaceMetricsChange () {
         const target = this.props.vm.editingTarget;
@@ -285,22 +302,27 @@ class Blocks extends React.Component {
         }
     }
     onScriptGlowOn (data) {
+        // console.log(data.id);
         this.workspace.glowStack(data.id, true);
     }
     onScriptGlowOff (data) {
+        // console.log(data.id);
         this.workspace.glowStack(data.id, false);
     }
     onBlockGlowOn (data) {
+        // console.log(data.id);
         this.workspace.glowBlock(data.id, true);
     }
     onBlockGlowOff (data) {
+        // console.log(data.id);
         this.workspace.glowBlock(data.id, false);
     }
     onVisualReport (data) {
+        // console.log(data.value);
         this.workspace.reportValue(data.id, data.value);
     }
     onWorkspaceUpdate (data) {
-        console.log('fuckkkk');
+        // console.log('workupdate');
         // When we change sprites, update the toolbox to have the new sprite's blocks
         if (this.props.vm.editingTarget) {
             const target = this.props.vm.editingTarget;

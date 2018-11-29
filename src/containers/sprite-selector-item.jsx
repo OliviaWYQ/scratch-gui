@@ -133,6 +133,7 @@ class SpriteSelectorItem extends React.Component {
             /* eslint-enable no-unused-vars */
             ...props
         } = this.props;
+        // console.log(this.props.vm.runtime.targets);
         return (
             <SpriteSelectorItemComponent
                 costumeURL={this.getCostumeData()}

@@ -75,6 +75,7 @@ const SpriteSelectorComponent = function (props) {
         selectedSprite = {};
         spriteInfoDisabled = true;
     }
+    console.log('spriteselector');
     return (
         <Box
             className={styles.spriteSelector}

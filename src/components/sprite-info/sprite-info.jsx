@@ -45,6 +45,7 @@ class SpriteInfo extends React.Component {
         );
     }
     render () {
+        console.log('spriteinfo');
         const {
             stageSize
         } = this.props;

@@ -66,7 +66,7 @@ class Stage extends React.Component {
     }
     componentDidMount () {
         this.attachRectEvents();
-        this.attachMouseEvents(this.canvas);
+        // this.attachMouseEvents(this.canvas);
         this.updateRect();
         this.props.vm.runtime.addListener('QUESTION', this.questionListener);
     }
@@ -88,7 +88,7 @@ class Stage extends React.Component {
         this.renderer.resize(this.rect.width, this.rect.height);
     }
     componentWillUnmount () {
-        this.detachMouseEvents(this.canvas);
+        // this.detachMouseEvents(this.canvas);
         this.detachRectEvents();
         this.stopColorPickingLoop();
         this.props.vm.runtime.removeListener('QUESTION', this.questionListener);
@@ -372,6 +372,7 @@ class Stage extends React.Component {
             onActivateColorPicker, // eslint-disable-line no-unused-vars
             ...props
         } = this.props;
+        console.log(this.props.vm);
         return (
             <StageComponent
                 canvas={this.canvas}
