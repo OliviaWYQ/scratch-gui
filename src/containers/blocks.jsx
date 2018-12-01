@@ -23,11 +23,14 @@ import {activateColorPicker} from '../reducers/color-picker';
 import {closeExtensionLibrary, openSoundRecorder, openConnectionModal} from '../reducers/modals';
 import {activateCustomProcedures, deactivateCustomProcedures} from '../reducers/custom-procedures';
 import {setConnectionModalExtensionId} from '../reducers/connection-modal';
+import { createStore, applyMiddleware } from 'redux';
 
 import {
     activateTab,
     SOUNDS_TAB_INDEX
 } from '../reducers/editor-tab';
+
+const store = createStore(() => [], {}, applyMiddleware());
 
 const addFunctionListener = (object, property, callback) => {
     const oldFn = object[property];
@@ -268,26 +271,8 @@ class Blocks extends React.Component {
                 this.updateToolboxBlockValue(`${prefix}y`, Math.round(this.props.vm.editingTarget.y).toString());
             });
         }
-        if(this.props.vm.runtime.targets.length!==0){
-            console.log(this.props.vm.runtime.targets[1].x);
-            //this.props.vm.runtime.targets[1].x;
-        }
-        if(this.props.vm.runtime.targets.length===3){
-            var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[2].x;
-            var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[2].y;
-            console.log(xDif);
-            console.log(yDif);
-            console.log("in");
-            console.log(this.num);
-        if(this.num===0&&Math.pow(xDif,2)<150&&Math.pow(yDif,2)<1600){
-            this.num+=1;
-            console.log("yes");
-            alert("you have complete this level");
-            if(this.num===3){
-                this.num=0;
-            }
-
     }
+    
     onWorkspaceMetricsChange () {
         const target = this.props.vm.editingTarget;
         if (target && target.id) {
