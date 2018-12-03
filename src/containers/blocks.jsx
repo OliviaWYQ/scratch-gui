@@ -23,14 +23,12 @@ import {activateColorPicker} from '../reducers/color-picker';
 import {closeExtensionLibrary, openSoundRecorder, openConnectionModal} from '../reducers/modals';
 import {activateCustomProcedures, deactivateCustomProcedures} from '../reducers/custom-procedures';
 import {setConnectionModalExtensionId} from '../reducers/connection-modal';
-import { createStore, applyMiddleware } from 'redux';
 
 import {
     activateTab,
     SOUNDS_TAB_INDEX
 } from '../reducers/editor-tab';
 
-const store = createStore(() => [], {}, applyMiddleware());
 
 const addFunctionListener = (object, property, callback) => {
     const oldFn = object[property];
@@ -40,6 +38,7 @@ const addFunctionListener = (object, property, callback) => {
         return result;
     };
 };
+
 
 const DroppableBlocks = DropAreaHOC([
     DragConstants.BACKPACK_CODE
@@ -72,11 +71,13 @@ class Blocks extends React.Component {
             'onWorkspaceUpdate',
             'onWorkspaceMetricsChange',
             'setBlocks',
-            'setLocale'
+            'setLocale',
+            'level1game'
         ]);
         this.ScratchBlocks.prompt = this.handlePromptStart;
         this.ScratchBlocks.statusButtonCallback = this.handleConnectionModalStart;
         this.ScratchBlocks.recordSoundCallback = this.handleOpenSoundRecorder;
+        this.num=0;
 
         this.state = {
             workspaceMetrics: {},
@@ -270,6 +271,28 @@ class Blocks extends React.Component {
                 this.updateToolboxBlockValue(`${prefix}x`, Math.round(this.props.vm.editingTarget.x).toString());
                 this.updateToolboxBlockValue(`${prefix}y`, Math.round(this.props.vm.editingTarget.y).toString());
             });
+        }
+        this.level1game()
+    }
+
+    level1game(){
+        var i ;
+        var k=this.props.vm.runtime.targets.length;
+        // console.log(this.props.vm);
+        console.log(k);
+        for(i=2;i<k;i+=1){
+            var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[i].x;
+            var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[i].y;
+            // console.log(Math.pow(xDif,2),Math.pow(yDif,2));
+            if(Math.pow(xDif,2)<1000 && Math.pow(yDif,2)<1000){
+                // console.log(this.props.vm.runtime.targets[i]);
+                this.props.vm.deleteSprite(this.props.vm.runtime.targets[i].id);
+            }
+        }
+        console.log(this.num);
+        if(k===2){
+            console.log('yesh');
+            alert("you have compeleted this class");
         }
     }
     
