@@ -21,6 +21,13 @@ const motion = function (isStage, targetId) {
                 </shadow>
             </value>
         </block>
+        <block type="motion_mysteps_next">
+            <value name="MYSTEPS">
+                <shadow type="math_number">
+                    <field name="NUM">74</field>
+                </shadow>
+            </value>
+        </block>
         <block type="motion_turnright">
             <value name="DEGREES">
                 <shadow type="math_number">
