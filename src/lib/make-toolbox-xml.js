@@ -11,9 +11,13 @@ const motion = function (isStage, targetId) {
     );
     return `
     <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#4C97FF" secondaryColour="#3373CC">
+        
         ${isStage ? `
         <label text="${stageSelected}"></label>
         ` : `
+        <block type="motion_ifonedgebounce"/>
+        <block type="motion_onestep"/>
+        ${blockSeparator}
         <block type="motion_movesteps">
             <value name="STEPS">
                 <shadow type="math_number">
@@ -21,20 +25,17 @@ const motion = function (isStage, targetId) {
                 </shadow>
             </value>
         </block>
-        ${blockSeparator}
-        <block type="motion_ifonedgebounce"/>
-        ${blockSeparator}
         <block type="motion_turnright">
             <value name="DEGREES">
                 <shadow type="math_number">
-                    <field name="NUM">15</field>
+                    <field name="NUM">90</field>
                 </shadow>
             </value>
         </block>
         <block type="motion_turnleft">
             <value name="DEGREES">
                 <shadow type="math_number">
-                    <field name="NUM">15</field>
+                    <field name="NUM">90</field>
                 </shadow>
             </value>
         </block>
@@ -676,6 +677,26 @@ const variables = function () {
     </category>
     `;
 };
+
+/*
+const myBlocks = function () {
+    const mystage = "我的积木";
+    return `
+    <category
+        name="%{BKY_CATEGORY_MYBLOCKS}"
+        id="myBlocks"
+        colour="#FF6680"
+        secondaryColour="#FF4D6A"
+        >
+        ${blockSeparator}
+        <label text="${mystage}"></label>
+        <block type="motion_ifonedgebounce"/>
+        <block type="motion_onestep"/>
+        ${blockSeparator}
+    </category>
+    `;
+};*/
+
 
 const myBlocks = function () {
     return `
