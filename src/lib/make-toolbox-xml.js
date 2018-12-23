@@ -17,12 +17,12 @@ const motion = function (isStage, targetId) {
         <block type="motion_movesteps">
             <value name="STEPS">
                 <shadow type="math_number">
-                    <field name="NUM">10</field>
+                    <field name="NUM">74</field>
                 </shadow>
             </value>
         </block>
         ${blockSeparator}
-        <block type="motion_mysteps_next"/>
+        <block type="motion_ifonedgebounce"/>
         ${blockSeparator}
         <block type="motion_turnright">
             <value name="DEGREES">
