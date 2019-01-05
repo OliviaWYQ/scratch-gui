@@ -15,9 +15,6 @@ const motion = function (isStage, targetId) {
         ${isStage ? `
         <label text="${stageSelected}"></label>
         ` : `
-        <block type="motion_ifonedgebounce"/>
-        <block type="motion_onestep"/>
-        ${blockSeparator}
         <block type="motion_movesteps">
             <value name="STEPS">
                 <shadow type="math_number">
@@ -145,6 +142,7 @@ const motion = function (isStage, targetId) {
 const looks = function (isStage, targetId) {
     const hello = ScratchBlocks.ScratchMsgs.translate('LOOKS_HELLO', 'Hello!');
     const hmm = ScratchBlocks.ScratchMsgs.translate('LOOKS_HMM', 'Hmm...');
+    const haha = '哈哈';
     return `
     <category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB">
         ${isStage ? '' : `
@@ -183,6 +181,13 @@ const looks = function (isStage, targetId) {
             <value name="MESSAGE">
                 <shadow type="text">
                     <field name="TEXT">${hmm}</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_think">
+            <value name="MESSAGE">
+                <shadow type="text">
+                    <field name="TEXT">${haha}</field>
                 </shadow>
             </value>
         </block>
@@ -710,6 +715,18 @@ const myBlocks = function () {
     `;
 };
 
+const mymotion = function () {
+    return `
+    <category name="课程" id="mymotion" colour="#FF6680" secondaryColour="#FF4D6A">
+        <block type="motion_ifonedgebounce"/>
+        ${blockSeparator}
+        <block type="looks_hide"/>
+        <block type="looks_nextcostume"/>
+        ${categorySeparator}
+    </category>
+    `;
+};
+
 const xmlOpen = '<xml style="display: none">';
 const xmlClose = '</xml>';
 
@@ -724,6 +741,7 @@ const makeToolboxXML = function (isStage, targetId, categoriesXML) {
 
     const everything = [
         xmlOpen,
+        mymotion(isStage, targetId), gap,
         motion(isStage, targetId), gap,
         looks(isStage, targetId), gap,
         sound(isStage, targetId), gap,
