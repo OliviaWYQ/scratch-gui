@@ -293,7 +293,9 @@ class Blocks extends React.Component {
         if(k===2){
             console.log('yesh');
             alert("you have compeleted this class");
-        }
+        } /*else if(k===3){
+            alert("you have not compeleted this class, try it again");
+        }*/
     }
     
     onWorkspaceMetricsChange () {
