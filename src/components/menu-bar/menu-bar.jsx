@@ -242,13 +242,12 @@ class MenuBar extends React.Component {
                 )}
             >
                 <div className={styles.mainMenu}>
-                    
-                  
                     <div className={classNames(styles.menuBarItem)}>
                         <GameLoader level="/static/classes/1/1-1.sb3">
                         
                             {(className, loadGame) => (
-                                <Button
+                                <Button 
+                                    id='class1'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -263,6 +262,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class2'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -277,6 +277,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class3'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -291,6 +292,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class4'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -305,6 +307,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class5'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -319,6 +322,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class6'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -333,6 +337,7 @@ class MenuBar extends React.Component {
                         
                             {(className, loadGame) => (
                                 <Button
+                                    id='class7'
                                     className={className}
                                     onClick={loadGame}
                                 >
@@ -346,6 +351,7 @@ class MenuBar extends React.Component {
                         <GameLoader level="/static/classes/1/1-8.sb3">
                             {(className, loadGame) => (
                                 <Button
+                                    id='class8'
                                     className={className}
                                     onClick={loadGame}
                                 >

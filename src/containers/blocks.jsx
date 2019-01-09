@@ -29,6 +29,8 @@ import {
     SOUNDS_TAB_INDEX
 } from '../reducers/editor-tab';
 
+import GameLoader from '../containers/game-loader.jsx';
+import MenuBar from '../components/menu-bar/menu-bar.jsx'
 
 const addFunctionListener = (object, property, callback) => {
     const oldFn = object[property];
@@ -72,13 +74,14 @@ class Blocks extends React.Component {
             'onWorkspaceMetricsChange',
             'setBlocks',
             'setLocale',
-            'level1game'
+            'level1game',
+            'clickDiv'
+            //'myload'
         ]);
         this.ScratchBlocks.prompt = this.handlePromptStart;
         this.ScratchBlocks.statusButtonCallback = this.handleConnectionModalStart;
         this.ScratchBlocks.recordSoundCallback = this.handleOpenSoundRecorder;
-        this.num=0;
-
+        this.num=2;
         this.state = {
             workspaceMetrics: {},
             prompt: null
@@ -197,7 +200,6 @@ class Blocks extends React.Component {
         // (variable changes/etc), re-enable toolbox refresh.
         // Using the setter function will rerender the entire toolbox which we just rendered.
         this.workspace.toolboxRefreshEnabled_ = true;
-
         const currentCategoryPos = this.workspace.toolbox_.getCategoryPositionById(categoryId);
         const currentCategoryLen = this.workspace.toolbox_.getCategoryLengthById(categoryId);
         if (offset < currentCategoryLen) {
@@ -275,29 +277,54 @@ class Blocks extends React.Component {
         this.level1game()
     }
 
+    clickDiv(e){
+        console.log('click', e)
+        if (this.num<=8){
+            this.num += 1
+        }
+        e.click();
+    }
+
     level1game(){
         var i ;
-        var k=this.props.vm.runtime.targets.length;
-        // console.log(this.props.vm);
-        console.log(k);
-        for(i=2;i<k;i+=1){
+        var thread = this.props.vm.runtime.threads.length;
+        var k = this.props.vm.runtime.targets.length;
+        //console.log(this.props.vm);
+        console.log(this.props.vm);
+        //console.log('thread:', thread)
+        //console.log('k:', k);
+        for(i=2; i<k; i+=1){
             var xDif = this.props.vm.runtime.targets[1].x-this.props.vm.runtime.targets[i].x;
             var yDif = this.props.vm.runtime.targets[1].y-this.props.vm.runtime.targets[i].y;
-            // console.log(Math.pow(xDif,2),Math.pow(yDif,2));
-            if(Math.pow(xDif,2)<1000 && Math.pow(yDif,2)<1000){
-                // console.log(this.props.vm.runtime.targets[i]);
+            console.log('i:', i, 'xDif:', Math.pow(xDif,2), 'yDif:', Math.pow(yDif,2));
+            console.log(this.props.vm.runtime.targets[i].drawableID);
+            if(Math.pow(xDif,2)<2000 && Math.pow(yDif,2)<2000){
+                //console.log(this.props.vm.runtime.targets[i]);
                 this.props.vm.deleteSprite(this.props.vm.runtime.targets[i].id);
             }
         }
-        console.log(this.num);
-        if(k===2){
-            console.log('yesh');
-            alert("you have compeleted this class");
-        } /*else if(k===3){
-            alert("you have not compeleted this class, try it again");
-        }*/
+        console.log('num:', this.num);
+        if(thread===1 && k===2){
+            console.log('Y');
+            //alert("you have compeleted this class");
+            if(this.num===9) {
+                alert("you have compeleted all the classes, congratulation!");
+            } else {
+                var r = confirm("you have compeleted this class, continue?");
+                if (r == true) {
+                    console.log("You pressed OK!");
+                    var gameid = 'class'+String(this.num)
+                    var element = document.getElementById(gameid);
+                    this.clickDiv(element);
+                    alert("Starting class "+String(this.num-1));
+                }
+            }
+        } else if(thread===1 && k===3){
+            console.log('N');
+            //alert("you have not compeleted this class, try it again?");
+        }
     }
-    
+
     onWorkspaceMetricsChange () {
         const target = this.props.vm.editingTarget;
         if (target && target.id) {
@@ -519,6 +546,7 @@ class Blocks extends React.Component {
                     />
                 ) : null}
             </React.Fragment>
+            
         );
     }
 }

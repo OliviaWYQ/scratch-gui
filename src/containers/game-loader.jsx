@@ -16,7 +16,14 @@ class GameLoader extends React.Component {
     
     load (){
         // this.props.onLoadingStarted();
-        // console.log(this.props.level);
+        console.log(this.props);
+        console.log('this level:', this.props.level);
+        var str = String(this.props.level).split('.');
+        var levelnum = Number(str[0].slice(-1));
+        if(levelnum<8){
+            console.log('next level:', str[0].slice(0, -1).concat(String(levelnum+1), '.', str[1]));
+        }        
+
         fetch(this.props.level)
             .then(resp => resp.arrayBuffer())
             .then(result => this.props.vm.loadProject(result))
